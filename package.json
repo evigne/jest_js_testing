@@ -2,7 +2,7 @@
   "name": "jest_learning",
   "version": "1.0.0",
   "main": "index.js",
-  "script": {
+  "scripts": {
     "test": "jest"
   },
   "license": "MIT",
