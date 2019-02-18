@@ -1,5 +1,34 @@
 const functions = require("./functions"); // bring that function for testing
 
+// beforeEach(() => initDatabase());  // Run Before Each test
+// afterEach(() => closeDatabase());  // Run After Each test
+
+// beforeAll(() => initDatabase());  // Run Before All test
+// afterAll(() => closeDatabase());  // Run After All test
+
+// const initDatabase = () => console.log('Database Initialized...');
+// const closeDatabase = () => console.log('Database Closed...');
+
+// describe - target the test to run once instead of before or after -  creates a block that groups together several related tests.
+
+// https://jestjs.io/docs/en/api#describename-fn
+const nameCheck = () => console.log("Checking Name....");
+
+describe("Checking Names", () => {
+  beforeEach(() => nameCheck());
+
+  test("User is Jeff", () => {
+    const user = "Jeff";
+    expect(user).toBe("Jeff");
+  });
+
+  test("User is Karen", () => {
+    const user = "Karen";
+    expect(user).toBe("Karen");
+  });
+});
+
+//toBe
 test("Add two numbers", () => {
   expect(functions.add(2, 2)).toBe(4); // test function and expected result // toBe is a matcher
 });
@@ -66,5 +95,23 @@ test("User fetched name should be Leanne Graham", async () => {
 //     // return the promise, if we omit return the test will complete before the fetch complete(axios.get())
 //     expect(data.name).toEqual("Leanne Graham");
 //     // expect(data.name).toEqual("Leanne Graham1"); //comment expect.assertions(1); and thisLine and test
+//   });
+// });
+
+// describe(name, fn)
+// describe(name, fn) creates a block that groups together several related tests. For example, if you have a myBeverage object that is supposed to be delicious but not sour, you could test it with:
+
+// const myBeverage = {
+//   delicious: true,
+//   sour: false,
+// };
+
+// describe('my beverage', () => {
+//   test('is delicious', () => {
+//     expect(myBeverage.delicious).toBeTruthy();
+//   });
+
+//   test('is not sour', () => {
+//     expect(myBeverage.sour).toBeFalsy();
 //   });
 // });
