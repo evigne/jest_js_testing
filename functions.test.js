@@ -43,14 +43,14 @@ test("Admin should be in userNames", () => {
 
 // Working with Async data
 //promise
-// test("User fetched name should be Leanne Graham", () => {
-//   expect.assertions(1); // verify the number of assertions called in this case it is one -- for testing Async code -- if leave assertion and name doesnt match the test still pass
-//   return functions.fetchUser().then(data => {
-//     // return the promise, if we omit return the test will complete before the fetch complete(axios.get())
-//     expect(data.name).toEqual("Leanne Graham");
-//     // expect(data.name).toEqual("Leanne Graham1"); //comment expect.assertions(1); and thisLine and test
-//   });
-// });
+test("User fetched name should be Leanne Graham", () => {
+  expect.assertions(1); // verify the number of assertions called in this case it is one -- for testing Async code -- if leave assertion and name doesnt match the test still pass
+  return functions.fetchUser().then(data => {
+    // return the promise, if we omit return the test will complete before the fetch complete(axios.get())
+    expect(data.name).toEqual("Leanne Graham");
+    // expect(data.name).toEqual("Leanne Graham1"); //comment expect.assertions(1); and thisLine and test
+  });
+});
 //Async Awaits  Async way
 
 test("User fetched name should be Leanne Graham", async () => {
